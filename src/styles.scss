@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #777;
+    background-image: linear-gradient(to right bottom, #16a085, #1abc9c);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: #faf9f9;
+    box-shadow: 0 2rem 6rem rgba(0,0,0,.3);
+    min-height: 60rem;
+}
+
+h1 {
+    margin: 5rem;
+}

@@ -1,0 +1,45 @@
+$imageHeight: 110px;
+
+table {
+
+    td {
+        img {
+            height: $imageHeight;
+        }
+
+        &.actions > div, &.cost  > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $imageHeight;
+
+            > .material-icons{
+                font-size: 3rem;
+                cursor: pointer;
+            }
+        }
+
+        &.cost  > div {
+            font-size: 2rem;
+        }
+    }
+}
+
+.change__pages {
+    display: flex;
+    margin-bottom: 10px;
+
+    span {
+        margin-right: 1rem; 
+    }
+
+    button {
+        margin-right: 1.5rem;
+        border: none;
+        background-color: transparent;
+        
+        &:hover{
+            color: #16a085;
+        }
+    }
+}
