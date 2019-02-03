@@ -1,11 +1,11 @@
 <div class="container">
-    <h1> Contect us </h1>
-        <form name="contact" (ngSubmit)="onSubmit()" class="contact">
+    <h1> Contact us </h1>
+        <form (ngSubmit)="onSubmit()" class="contact">
             <div class="form-group row">
                 <label for="contact__name" class="col-sm-4 col-form-label"> Your name:  </label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" name="contact__name" 
-                  [(ngModel)]="nameValue" #name__input = "ngModel" placeholder="your name" 
+                  [(ngModel)]="nameValue" placeholder="your name" required
                   maxlength="10" />
                 </div>
             </div>
@@ -14,15 +14,17 @@
                 <label for="contact__email" class="col-sm-4 col-form-label"> Your email:  </label>
                 <div class="col-sm-8">
                   <input type="email" class="form-control" name="contact__email" 
-                  [(ngModel)]="emailValue" #email__input = "ngModel" placeholder="your email" 
+                  [(ngModel)]="emailValue" placeholder="your email" 
                   maxlength="10" />
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="contact__email" class="col-sm-4 col-form-label"> Your Message:  </label>
+                <label for="contact__message" class="col-sm-4 col-form-label"> Your Message:  </label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" rows="4" maxlength="50"> </textarea>
+                    <textarea class="form-control" rows="4" maxlength="50" 
+                    [(ngModel)]="MessageValue"> 
+                    </textarea>
                 </div>
             </div>
 

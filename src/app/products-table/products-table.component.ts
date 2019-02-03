@@ -12,7 +12,7 @@ export class ProductsTableComponent implements OnInit {
   public onAdd: Function; 
 
   @Input()
-  public onRemove: Function; 
+  public onRemove: Function;
 
   itemPerPage: number;
   page: number;

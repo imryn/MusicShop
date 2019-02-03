@@ -2,6 +2,7 @@ import { Item } from './item';
 
 export const ITEMS: Item[] = [
     {
+        id: '1',
         title: 'High Way To Hell',
         image: 'https://upload.wikimedia.org/wikipedia/en/a/ac/Acdc_Highway_to_Hell.JPG',
         description: `is the sixth studio album by Australian hard rock band AC/DC, released
@@ -11,6 +12,7 @@ export const ITEMS: Item[] = [
         cost: 15,
     }  ,
     {
+        id: '2',
         title: `Queen - Don't Stop Me Now`,
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwAYrAeqVMF_Vwekb9nYTZjo0wPjZ1u-7a27bLPGkEnDs_sO8glQ',
         description: `is a song by the British rock band Queen, featured on their 1978 album Jazz
@@ -20,15 +22,17 @@ export const ITEMS: Item[] = [
         cost: 22,
     } ,
     {
+        id: '3',
         title: 'Elton Jhon - Goodbye Yellow Brick Road',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4bJ74hOtO9gNHoS4GKEZUYRjL8DZAzL1mwfvazxBTzlXJHm_t',
         description: `is the seventh studio album by Elton John, released in 1973.
          The album has sold more than 30 million copies worldwide[3] and is widely regarded
-         as John's best. It was recorded at the Château d'Hérouville in France after
-         problems recording at the intended location in Jamaica.`,
+         as John's best. It was recorded at the Château d'Hérouville in France after problems recording
+         at the intended location in Jamaica.`,
         cost: 12,
     } ,
     {
+        id: '4',
         title: 'Deep Peurple - In Rock',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4nQ_HXZcpGiQj_wiSFoDG74J4NT8WDXlMGscWG5PNdDIlf9-I',
         description: `is the fourth studio album by English rock band Deep Purple,
@@ -37,27 +41,28 @@ export const ITEMS: Item[] = [
         cost: 15,
     } ,
     {
+        id: '5',
         title: 'Led Zeppelin - Houses Of The Holy',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq9_MUMGkH0F5dDxCXlRhZnszpDOrEKqIbBfh-GjMHAQr34KHTtg',
         description: `The album benefited from several band members installing studios at home,
-         which allowed them to develop more sophisticated songs and arrangements,
-         and expand their musical style. Although critical response was mixed,
-         Houses of the Holy became a commercial success, and was later certified 11× platinum
-         by the Recording Industry Association of America in 1999.`,
+         which allowed them to develop more sophisticated songs and arrangements, and expand 
+         their musical style. Although critical response was mixed, Houses of the Holy became a 
+         commercial success, and was later certified 11× platinum by the Recording Industry
+         Association of America in 1999.`,
         cost: 10,
     } ,
     {
+        id: '6',
         title: 'Adele - 25',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY80CnIr2y0TvOxvqxfM7Rwa-h28BGHRMFBOhrL-QVRo4a3WCFFg',
-        description: `released on 20 November 2015 by XL
-         Recordings and Columbia Records.
-         Issued nearly five years after her previous album, 
-         the internationally successful 21 (2011), the album is titled
-         as a reflection of her life and frame of mind at 25 years old
-         and is termed a "make-up record.`,
+        description: `released on 20 November 2015 by XL Recordings and Columbia Records.
+         Issued nearly five years after her previous album, the internationally successful
+         21 (2011), the album is titled as a reflection of her life and frame of mind at 25
+         years old and is termed a "make-up record.`,
         cost: 11,
     } ,
     {
+        id: '7',
         title: 'Sam Smith - In the Lonely Hour',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKeQIfqCIqhM34Sb2-cyexJjKss0SQXgYzEGGgdWvSZ651WEA-',
         description: `It was released in the United Kingdom on 26 May 2014, via Capitol UK
@@ -66,6 +71,7 @@ export const ITEMS: Item[] = [
         cost: 15,
     } ,
     {
+        id: '8',
         title: 'ColdPlay - A Rush of Blood to the Head',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvyS_b6jS5D_yOgBmJs82tW43_5A3EnacRpLDhGZAr7b5oxYaoNQ',
         description: `is the second studio album by British rock band Coldplay. It was
@@ -75,6 +81,7 @@ export const ITEMS: Item[] = [
         cost: 15,
     } ,
     {
+        id: '9',
         title: 'Guns N Roses - appetite for destruction',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk9WOdQf_ApFC5wJv0Y2vXC34nYati0La0m-nWEA5TiDTtvybKug',
         description: `The album was released to little mainstream attention in 1987. 
@@ -86,6 +93,7 @@ export const ITEMS: Item[] = [
         cost: 15,
     } ,
     {
+        id: '10',
         title: 'Guns N Roses - Use Your Illusion',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmtLLyftUSAPOJo4b0j0VZly3diyai0wyIWDzU_RCu3airPXhOuw',
         description: `is a Guns N Roses compilation album drawing from the Use Your Illusion

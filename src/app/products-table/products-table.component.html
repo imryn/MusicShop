@@ -2,7 +2,7 @@
     <tbody *ngIf="items">
       <tr *ngFor="let item of items"> 
         <td class="image"> 
-          <img [src]="item.image" /> 
+          <img [src]="item.image" routerLink="/product/{{item.title}}" /> 
         </td>
         <td class="desc"> {{item.description}} </td>
         <td class="cost"> 

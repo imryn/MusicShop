@@ -5,6 +5,7 @@ table {
     td {
         img {
             height: $imageHeight;
+            cursor: pointer;
         }
 
         &.actions > div, &.cost  > div {
@@ -16,11 +17,19 @@ table {
             > .material-icons{
                 font-size: 3rem;
                 cursor: pointer;
+
+                &:hover{
+                    color: #16a085;
+                }
             }
         }
 
         &.cost  > div {
             font-size: 2rem;
+        }
+
+        &.desc {
+            white-space: pre-line;
         }
     }
 }

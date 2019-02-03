@@ -7,8 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavComponent } from './nav/nav.component';
-import  { FormsModule } from '@angular/forms';
+import  { FormsModule} from '@angular/forms';
 import { ProductsTableComponent } from './products-table/products-table.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { ProductsTableComponent } from './products-table/products-table.componen
     AboutComponent,
     ContactComponent,
     NavComponent,
-    ProductsTableComponent
+    ProductsTableComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
