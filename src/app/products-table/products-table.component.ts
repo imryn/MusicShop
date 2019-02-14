@@ -1,5 +1,6 @@
 import { Component, OnInit , Input } from '@angular/core';
 import {ITEMS} from './../items';
+import {CartService} from "./../cart.service";
 
 @Component({
   selector: 'app-products-table',
@@ -19,7 +20,7 @@ export class ProductsTableComponent implements OnInit {
   items: object;
   
 
-  constructor() { 
+  constructor(private cartService:CartService) { 
     this.itemPerPage = 5;
     this.page = 0 ;
   }
@@ -51,6 +52,12 @@ export class ProductsTableComponent implements OnInit {
       this.updateView();
     }
    
+  }
+
+  inCart(title) {
+    if(this.cartService.cart[title]){
+      return true;
+    }
   }
 
 

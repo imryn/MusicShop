@@ -6,10 +6,9 @@
         box-shadow: 0 3rem 6rem rgba(0,0,0,0.1);
         background-color: rgba(200, 214, 229, 0.6);
         position: relative;
-        width: 50%;
-        left: 24rem;
+        width: 55.5%;
         height: 100%;
-        margin-top: 14rem;
+        margin: 0 auto;
     }
 }
 
@@ -26,7 +25,7 @@
     &__content {
         position: absolute;
         height: 50%;
-        width: 40%;
+        width: 45%;
         object-fit: cover;
     }
 }

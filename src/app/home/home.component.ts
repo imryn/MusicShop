@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ITEMS} from './../items';
-
+import {CartService} from "./../cart.service";
 
 @Component({
   selector: 'app-home',
@@ -10,10 +9,9 @@ import {ITEMS} from './../items';
 export class HomeComponent implements OnInit {
   
   searchValue: string;
-  cart: object;
 
-  constructor() { 
-    this.cart = {};
+  constructor(private cartService:CartService) { 
+    
     this.onProductAdd = this.onProductAdd.bind(this);
     this.onProductRemove = this.onProductRemove.bind(this);
   }
@@ -29,45 +27,11 @@ export class HomeComponent implements OnInit {
   }
 
   onProductAdd(item){
-    if(this.cart[item.title]){
-       this.cart[item.title]++;
-    }
-    else {
-      this.cart[item.title]= 1;
-    }
-
-    this.cart[item.title] = this.cart[item.title] ? this.cart[item.title]++ : 1;
+    this.cartService.onProductAdd(item);
   }
 
   onProductRemove(item){
-    if(this.cart[item.title]) {
-      this.cart[item.title]--;
-      if(this.cart[item.title] == 0){
-         delete this.cart[item.title];
-      }
-    }
-  }
-
-  totalCalc(){
-    const totalCart = Object.values(this.cart).reduce((sum,value)=>sum+value,0);
-    return totalCart;
-  }
-
-  findItemByTitle(title){
-    for(let i=0; i<ITEMS.length; i++) {
-      if(ITEMS[i].title = title){
-        return ITEMS[i];
-      }
-    }
-  }
-
-  totalCost(){
-    let sum = 0 ;
-    for(let title in this.cart){
-        const item = this.findItemByTitle(title);
-        sum = sum + item.cost * this.cart[title];
-    }
-    return sum;
+    this.cartService.onProductRemove(item);
   }
 
 }

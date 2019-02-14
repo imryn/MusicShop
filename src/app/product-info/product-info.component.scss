@@ -1,5 +1,11 @@
-.item {
-    margin-left: 5%;
+
+.product {
+    display: flex;
+    justify-content: space-around;
+
+    &__item {
+        margin-left: 13%;
+    }
 }
 
 .material-icons {
@@ -10,4 +16,10 @@
     &:hover {
         color: #16a085;
     }
+}
+
+.cart-info {
+    margin: 4rem;
+    display: flex;
+    justify-content: space-around;
 }

@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import  { FormsModule} from '@angular/forms';
 import { ProductsTableComponent } from './products-table/products-table.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { CartInfoComponent } from './cart-info/cart-info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductInfoComponent } from './product-info/product-info.component';
     ContactComponent,
     NavComponent,
     ProductsTableComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    CartInfoComponent
   ],
   imports: [
     BrowserModule,

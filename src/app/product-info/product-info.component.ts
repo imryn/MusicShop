@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import {ITEMS} from "./../items";
+import {DataService} from "./../data-service";
+import {CartService} from "./../cart.service";
 
 @Component({
   selector: 'app-product-info',
@@ -11,26 +12,20 @@ export class ProductInfoComponent implements OnInit {
 
   item: object;
 
-  constructor(private route: ActivatedRoute) {
-   
-  }
+  constructor(private route: ActivatedRoute,
+    private dataService: DataService, private cartService: CartService) {
 
+    this.onProductAdd = this.onProductAdd.bind(this);
 
-  findItemInItems(title){
-    for(let item of ITEMS){
-      if(item.title == title){
-        return item;
-      }
-    }
   }
 
   ngOnInit() {
     const itemTitle = this.route.params['value']['itemTitle'];
-    this.item = this.findItemInItems(itemTitle);
-
-
+    this.item = this.dataService.findItemByTitle(itemTitle);
   }
 
- 
+  onProductAdd(item){
+    this.cartService.onProductAdd(item);
+  }
 
 }

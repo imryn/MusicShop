@@ -1,5 +1,9 @@
 $imageHeight: 110px;
 
+.material-icons {
+    font-size: 3rem;
+}
+
 table {
 
     td {
@@ -15,7 +19,6 @@ table {
             height: $imageHeight;
 
             > .material-icons{
-                font-size: 3rem;
                 cursor: pointer;
 
                 &:hover{
@@ -28,8 +31,8 @@ table {
             font-size: 2rem;
         }
 
-        &.desc {
-            white-space: pre-line;
+        &.desc > div {
+            color: #00b894;
         }
     }
 }
@@ -52,3 +55,4 @@ table {
         }
     }
 }
+

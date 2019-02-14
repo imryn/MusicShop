@@ -4,7 +4,12 @@
         <td class="image"> 
           <img [src]="item.image" routerLink="/product/{{item.title}}" /> 
         </td>
-        <td class="desc"> {{item.description}} </td>
+        <td class="desc"> 
+          <div *ngIf="inCart(item.title)"  class="material-icons">shopping_cart</div>
+          <p>
+              {{item.description}} 
+          </p>
+        </td>
         <td class="cost"> 
           <div> {{item.cost}} 
             <span  class="material-icons"> attach_money </span> 
@@ -20,7 +25,7 @@
     </tbody>
 </table>
 <div class="change__pages">
-    <span> Page: {{page + 1}} </span>
+    <span> Page: {{page + 1}} of {{numberOfPages()}} </span>
     <button type="button" (click)="prvPage()"> Previous </button>
     <button type="button" (click)="nextPage()"> Next </button>
 </div>

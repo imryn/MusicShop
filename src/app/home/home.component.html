@@ -6,16 +6,7 @@
                     [(ngModel)]="searchValue" #search__input = "ngModel" placeholder="Search" />
               <input type = "submit" value = "Submit" class="btn btn-primary search__button">
           </form>
-          <div class="item_info">
-              <p class="detail"> Cart Info: </p>
-              <div class="product">
-                <div class="product__item"> item {{totalCalc()}} </div>
-                <div class="product__money"> 
-                    {{totalCost()}}
-                    <i class="material-icons">attach_money</i>
-                </div>
-              </div>
-          </div>
+        <app-cart-info> </app-cart-info>
       </div>
       
       <app-products-table [onAdd]="onProductAdd" [onRemove]="onProductRemove"> </app-products-table>
