@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {DataService} from "./data-service";
+import {DataService} from './data-service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class CartService {
        this.cart[item.title]++;
     }
     else {
-      this.cart[item.title]= 1;
+      this.cart[item.title] = 1;
     }
 
     this.cart[item.title] = this.cart[item.title] ? this.cart[item.title]++ : 1;

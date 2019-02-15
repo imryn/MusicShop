@@ -17,7 +17,6 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    
   }
 
 }

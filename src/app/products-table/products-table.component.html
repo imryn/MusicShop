@@ -1,4 +1,5 @@
-<table class="products-table" class="table table-striped table-bordered table-sm" cellspacing="0">
+<table class="products-table table table-striped table-bordered table-sm" [ngClass]="ng-hide"
+ ng-hide="products-table" cellspacing="0">
     <tbody *ngIf="items">
       <tr *ngFor="let item of items"> 
         <td class="image"> 

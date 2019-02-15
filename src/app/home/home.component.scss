@@ -18,11 +18,30 @@
     }
 }
 
+form {
+    width: 60%;
+}
+
 .main__info_cart {
     margin: 4rem;
     display: flex;
     justify-content: space-around;
 }
+
+.product {
+    margin-left: 15%;
+}
+
+.material-icons {
+    font-size: 4rem;
+    margin-left: -0.4rem;
+    cursor: pointer;
+
+    &:hover {
+        color: #16a085;
+    }
+}
+
 
 
 

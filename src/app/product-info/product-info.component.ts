@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import {DataService} from "./../data-service";
-import {CartService} from "./../cart.service";
+import {DataService} from './../data-service';
+import {CartService} from './../cart.service';
 
 @Component({
   selector: 'app-product-info',
@@ -16,7 +16,6 @@ export class ProductInfoComponent implements OnInit {
     private dataService: DataService, private cartService: CartService) {
 
     this.onProductAdd = this.onProductAdd.bind(this);
-
   }
 
   ngOnInit() {

@@ -6,7 +6,7 @@ import {ITEMS} from './items';
 })
 export class DataService {
 
-  constructor() { 
+  constructor() {
 
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from "./../cart.service";
+import {CartService} from './../cart.service';
+import {DataService} from './../data-service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,10 @@ import {CartService} from "./../cart.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
   searchValue: string;
+  item: object;
 
-  constructor(private cartService:CartService) { 
-    
+  constructor(private cartService: CartService, private dataService: DataService) { 
     this.onProductAdd = this.onProductAdd.bind(this);
     this.onProductRemove = this.onProductRemove.bind(this);
   }
@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.searchValue) {
-      
+    if (this.searchValue) {
+      this.item = this.dataService.findItemByTitle(this.searchValue);
     }
   }
 
