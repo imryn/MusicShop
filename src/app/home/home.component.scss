@@ -1,4 +1,13 @@
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-small: 48em; //762px
+$bp-smallest: 31.25em; //500px
+
 .search {
+    @media only screen and (max-width: $bp-large) {
+        font-size: 80%;
+    }
 
     &__input {
         font-family: inherit;
@@ -10,11 +19,23 @@
         border-radius: 100px;
         width: 50%;
         margin-left: 1rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-left: 0;
+        }
     }
 
     &__button {
         border: none;
         margin-left: 3rem;
+
+        @media only screen and (max-width: $bp-large) {
+            font-size: 80%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            margin: 2rem 0 0 0;
+        }
     }
 }
 

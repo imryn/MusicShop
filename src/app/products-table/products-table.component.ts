@@ -10,7 +10,7 @@ import {CartService} from './../cart.service';
 export class ProductsTableComponent implements OnInit {
 
   @Input()
-  public onAdd: Function; 
+  public onAdd: Function;
 
   @Input()
   public onRemove: Function;
@@ -56,6 +56,5 @@ export class ProductsTableComponent implements OnInit {
       return true;
     }
   }
-
 
 }

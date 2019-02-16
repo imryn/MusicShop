@@ -101,5 +101,5 @@ export const ITEMS: Item[] = [
          sold at Walmart and Kmart, two retail outlets that refused to stock the unedited Use
          Your Illusion I and II due to explicit lyrics.`,
         cost: 15,
-    } 
+    }
 ]

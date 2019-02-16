@@ -13,11 +13,11 @@ export class CartInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  totalCalc(){
+  totalCalc() {
     return this.cartService.totalCalc();
   }
 
-  totalCost(){
+  totalCost() {
     return this.cartService.totalCost();
   }
 

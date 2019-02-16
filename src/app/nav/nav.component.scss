@@ -1,3 +1,5 @@
+$bp-small: 48em; //762px
+
 .header {
     font-size: 1.2rem;
     height: 7rem;
@@ -11,6 +13,10 @@
 .logo {
     width: 5%;
     height: 100%;
+
+    @media only screen and (max-width: $bp-small) {
+        width: 15%;
+    } 
 }
 
 .navbar {

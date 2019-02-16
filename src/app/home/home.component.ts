@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   searchValue: string;
   item: object;
 
-  constructor(private cartService: CartService, private dataService: DataService) { 
+  constructor(private cartService: CartService, private dataService: DataService) {
     this.onProductAdd = this.onProductAdd.bind(this);
     this.onProductRemove = this.onProductRemove.bind(this);
   }
@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onProductAdd(item){
+  onProductAdd(item) {
     this.cartService.onProductAdd(item);
   }
 
-  onProductRemove(item){
+  onProductRemove(item) {
     this.cartService.onProductRemove(item);
   }
 

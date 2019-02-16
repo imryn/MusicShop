@@ -1,5 +1,5 @@
 $imageHeight: 110px;
-
+$bp-small: 48em; //762px
 .material-icons {
     font-size: 3rem;
 }
@@ -10,6 +10,16 @@ table {
         img {
             height: $imageHeight;
             cursor: pointer;
+
+            @media only screen and (max-width: $bp-small) {
+                height: 75px;
+            }
+        }
+
+        p {
+            @media only screen and (max-width: $bp-small) {
+                font-size: 10px;
+            } 
         }
 
         &.actions > div, &.cost  > div {
@@ -21,6 +31,10 @@ table {
             > .material-icons{
                 cursor: pointer;
 
+                @media only screen and (max-width: $bp-small) {
+                    font-size: 14px;
+                } 
+
                 &:hover{
                     color: #16a085;
                 }
@@ -29,6 +43,10 @@ table {
 
         &.cost  > div {
             font-size: 2rem;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: 10px;
+            } 
         }
 
         &.desc > div {
@@ -41,6 +59,10 @@ table {
     display: flex;
     margin-bottom: 10px;
     display: block;
+
+    @media only screen and (max-width: $bp-small) {
+        font-size: 10px;
+    } 
 
     span {
         margin-right: 1rem; 
