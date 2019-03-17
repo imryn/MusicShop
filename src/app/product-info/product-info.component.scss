@@ -1,10 +1,19 @@
+$bp-large: 68.75em; //1100px
 
 .product {
     display: flex;
     justify-content: space-around;
 
+    @media only screen and (max-width: $bp-large) {
+        margin-left: 10%;
+    }
+
     &__item {
         margin-left: 13%;
+
+        @media only screen and (max-width: $bp-large) {
+            margin-left: 10%;
+        }
     }
 }
 
