@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     if (this.searchValue) {
-      this.item = this.dataService.findItemByTitle(this.searchValue);
+      const searchItem = this.searchValue.toLowerCase();
+      this.item = this.dataService.findItemByTitle(searchItem);
     }
   }
 
