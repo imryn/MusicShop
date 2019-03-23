@@ -1,9 +1,9 @@
-<table class="products-table table table-striped table-bordered table-sm" [ngClass]="ng-hide"
- ng-hide="products-table" cellspacing="0">
-    <tbody *ngIf="items">
-      <tr *ngFor="let item of items"> 
+<table class="products-table table table-striped table-bordered table-sm"
+ cellspacing="0">
+    <tbody *ngIf="items()">
+      <tr *ngFor="let item of items()"> 
         <td class="image"> 
-          <img [src]="item.image" routerLink="/product/{{item.title}}" /> 
+          <img [src]="item.image" routerLink="/product/{{item.title}}" />
         </td>
         <td class="desc"> 
           <div *ngIf="inCart(item.title)"  class="material-icons">shopping_cart</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit , Input } from '@angular/core';
-import {ITEMS} from './../items';
 import {CartService} from './../cart.service';
 
 @Component({
@@ -8,46 +7,38 @@ import {CartService} from './../cart.service';
   styleUrls: ['./products-table.component.scss']
 })
 export class ProductsTableComponent implements OnInit {
-
-  @Input()
-  public onAdd: Function;
-
-  @Input()
-  public onRemove: Function;
+  @Input() onAdd: Function;
+  @Input() onRemove: Function;
+  @Input() public data: [];
 
   itemPerPage: number;
   page: number;
-  items: object;
 
   constructor(private cartService: CartService) {
     this.itemPerPage = 5;
     this.page = 0 ;
   }
 
-  updateView(){
+  items() {
     const offset =  this.page * this.itemPerPage;
-    this.items = ITEMS.slice(offset, offset + this.itemPerPage);
+    return this.data.slice(offset, offset + this.itemPerPage);
   }
 
-  ngOnInit() {
-      this.updateView();
-  }
+  ngOnInit() {}
 
   numberOfPages() {
-    return Math.ceil(ITEMS.length / this.itemPerPage);
+    return Math.ceil(this.data.length / this.itemPerPage);
   }
 
   prvPage() {
     if (this.page > 0) {
       this.page--;
-      this.updateView();
     }
   }
 
   nextPage() {
     if (this.page < this.numberOfPages()) {
       this.page++;
-      this.updateView();
     }
   }
 

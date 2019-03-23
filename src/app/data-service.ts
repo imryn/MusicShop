@@ -17,4 +17,14 @@ export class DataService {
       }
     }
   }
+
+
+  searchByTitle(searchWord){
+    const regex = new RegExp(searchWord, 'i');
+    return ITEMS.filter(item => {
+      return regex.test(item.title);
+    });
+  }
+
+
 }

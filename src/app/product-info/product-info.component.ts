@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {DataService} from './../data-service';
 import {CartService} from './../cart.service';
 
@@ -9,7 +9,6 @@ import {CartService} from './../cart.service';
   styleUrls: ['./product-info.component.scss']
 })
 export class ProductInfoComponent implements OnInit {
-
   item: object;
 
   constructor(private route: ActivatedRoute,

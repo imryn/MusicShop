@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from './../cart.service';
 import {DataService} from './../data-service';
+import {ITEMS} from './../items';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import {DataService} from './../data-service';
 })
 export class HomeComponent implements OnInit {
   searchValue: string;
-  item: object;
+  searchResult: object;
+  albumsData = ITEMS;
 
   constructor(private cartService: CartService, private dataService: DataService) {
     this.onProductAdd = this.onProductAdd.bind(this);
@@ -22,8 +24,9 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     if (this.searchValue) {
-      const searchItem = this.searchValue.toLowerCase();
-      this.item = this.dataService.findItemByTitle(searchItem);
+      this.albumsData = this.dataService.searchByTitle(this.searchValue);
+    } else {
+      this.albumsData = ITEMS;
     }
   }
 
