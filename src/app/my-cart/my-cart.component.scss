@@ -1,0 +1,26 @@
+$imageHeight: 110px;
+$bp-small: 48em; //762px
+
+table {
+    margin-top: 2%;
+
+    td {
+        text-align: center;
+        img {
+            height: $imageHeight;
+            cursor: pointer;
+    
+            @media only screen and (max-width: $bp-small) {
+                height: 75px;
+            }
+        }
+
+        &.title, &.quantity {
+            padding-top: 5%;
+        }
+    }
+    
+    th {
+        text-align: center;
+    }
+}

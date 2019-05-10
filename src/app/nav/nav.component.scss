@@ -39,6 +39,8 @@ $bp-small: 48em; //762px
         position: relative;
         margin: 0;
         flex: 1;
+        white-space: nowrap;
+        padding: 2.5rem 4rem;
     }
 
     &__item::before {
@@ -70,7 +72,6 @@ $bp-small: 48em; //762px
         color: #fff;
         text-decoration: none;
         text-transform: uppercase;
-        padding: 2.4rem 4rem;
         justify-content: center;
         position: relative;
         z-index: 10;

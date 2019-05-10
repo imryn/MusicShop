@@ -7,10 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavComponent } from './nav/nav.component';
-import  { FormsModule} from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { ProductsTableComponent } from './products-table/products-table.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { CartInfoComponent } from './cart-info/cart-info.component';
+import { MyCartComponent } from './my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CartInfoComponent } from './cart-info/cart-info.component';
     NavComponent,
     ProductsTableComponent,
     ProductInfoComponent,
-    CartInfoComponent
+    CartInfoComponent,
+    MyCartComponent
   ],
   imports: [
     BrowserModule,

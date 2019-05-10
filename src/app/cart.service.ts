@@ -5,42 +5,51 @@ import {DataService} from './data-service';
   providedIn: 'root'
 })
 export class CartService {
-  cart: object;
+  lsName = 'cart';
+  cart = this.getCart();
 
   constructor(private dataService: DataService) {
-    this.cart = {};
-   }
+  }
 
-   onProductAdd(item){
-    if(this.cart[item.title]){
+   onProductAdd(item) {
+    if (this.cart[item.title]) {
        this.cart[item.title]++;
     } else {
       this.cart[item.title] = 1;
     }
-
     this.cart[item.title] = this.cart[item.title] ? this.cart[item.title]++ : 1;
+    this.saveCart();
   }
 
-  onProductRemove(item){
-    if(this.cart[item.title]) {
+  onProductRemove(item) {
+    if (this.cart[item.title]) {
       this.cart[item.title]--;
-      if(this.cart[item.title] == 0){
+      if (this.cart[item.title] === 0) {
          delete this.cart[item.title];
       }
+      this.saveCart();
     }
   }
 
   totalCalc() {
-    const totalCart = Object.values(this.cart).reduce((sum, value) => sum + value, 0);
-    return totalCart;
+    return Object.values(this.cart).reduce((sum: number, value: number) => sum + value, 0);
   }
 
-  totalCost(){
-    let sum = 0 ;
-    for(let title in this.cart) {
-        const item = this.dataService.findItemByTitle(title);
-        sum = sum + item.cost * this.cart[title];
-    }
-    return sum;
+  totalCost() {
+    return Object.keys(this.cart).reduce((sum , title) => {
+      const item = this.dataService.findItemByTitle(title);
+      return sum + item.cost * this.cart[title];
+    }, 0 );
   }
+
+  getCart() {
+    const cart = localStorage.getItem(this.lsName);
+    return (cart ? JSON.parse(cart) : {});
+  }
+
+  saveCart() {
+    localStorage.setItem(this.lsName, JSON.stringify(this.cart));
+  }
+
 }
+

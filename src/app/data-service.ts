@@ -10,20 +10,18 @@ export class DataService {
 
   }
 
-  findItemByTitle(title){
-    for(let item of ITEMS){
-      if(item.title.includes(title)) {
+ findItemByTitle(title){
+    for (const item of ITEMS) {
+      if (item.title.includes(title)) {
         return item;
       }
     }
   }
 
 
-  searchByTitle(searchWord){
+ searchByTitle(searchWord) {
     const regex = new RegExp(searchWord, 'i');
-    return ITEMS.filter(item => {
-      return regex.test(item.title);
-    });
+    return ITEMS.filter(item => regex.test(item.title));
   }
 
 
