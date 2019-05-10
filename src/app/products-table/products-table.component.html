@@ -1,9 +1,21 @@
 <table class="products-table table table-striped table-bordered table-sm"
  cellspacing="0">
+   <thead>
+      <tr>
+        <th> Poster </th>
+        <th> Title </th>
+        <th> Description </th>
+        <th> Cost </th>
+        <th> </th>
+      </tr>
+    </thead>
     <tbody *ngIf="items()">
       <tr *ngFor="let item of items()"> 
         <td class="image"> 
           <img [src]="item.image" routerLink="/product/{{item.title}}" />
+        </td>
+        <td class="title">
+            {{item.title}}
         </td>
         <td class="desc"> 
           <div *ngIf="inCart(item.title)"  class="material-icons">shopping_cart</div>
