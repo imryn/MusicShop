@@ -40,7 +40,7 @@ $bp-small: 48em; //762px
         margin: 0;
         flex: 1;
         white-space: nowrap;
-        padding: 2.5rem 4rem;
+        padding: 1rem 4rem;
     }
 
     &__item::before {
@@ -78,4 +78,11 @@ $bp-small: 48em; //762px
         display: flex;
         align-items: center;
     }
+  
 }
+
+.material-icons {
+    margin-left: 30%;
+    color: #fff;
+}
+
