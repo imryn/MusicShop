@@ -1,4 +1,4 @@
-# MyMusicShop
+# My Music Shop
 
 my first Angular project. it is a small music shop divided to 4 pages. at the home page, you can see all albums at the shop. you can choose the album you want to buy and add it to your cart, then move forward to your own cart. you can search for a specific album, send connection info and read about the website.
 the website is being programmed by Angular 7 and C# using .NET. also, uses a bootstrap library for responsive.
