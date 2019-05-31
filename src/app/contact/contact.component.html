@@ -1,46 +1,53 @@
 <div class="container">
     <h1> Contact us </h1>
-        <form (ngSubmit)="onSubmit()" class="contact">
-            <div class="form-group row" [class.has-error]="name.invalid && name.touched">
-                <label for="contact__name" class="col-sm-4 col-form-label"> Your name:  </label>
+        <form (ngSubmit)="onSubmit()" class="contact" [formGroup]="userForm">
+            <div class="form-group row">
+                <label for="FirstName" class="col-sm-4 col-form-label"> Your First Name:  </label>
                 <div class="col-sm-8">
-                  <input type="text" required class="form-control" name="contact__name" 
-                  #name="ngModel" [(ngModel)]="nameValue" placeholder="your name" required
+                  <input type="text" class="form-control" formControlName="FirstName" 
+                  placeholder="your first name" required
                    />
 
-                  <span class="help-block" *ngIf="name.errors && name.invalid && name.touched">
-                        Name is invalid
-                  </span>
-                </div>
-            </div>
+                   <app-control-messages [control]="userForm.controls.FirstName"></app-control-messages>
 
-            <div class="form-group row" [class.has-error]="email.invalid && email.touched">
-                <label for="contact__email" class="col-sm-4 col-form-label"> Your email:  </label>
-                <div class="col-sm-8">
-                  <input type="email" required email class="form-control" name="contact__email" 
-                  #email="ngModel" [(ngModel)]="emailValue" placeholder="your email"
-                   />
-
-                  <span class="help-block" *ngIf="email.errors && email.errors.required && email.touched">
-                    Email is required
-                  </span>
-
-                  <span class="help-block" *ngIf="email.errors && email.errors.email && email.touched">
-                        Email is invalid
-                  </span>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="contact__message" class="col-sm-4 col-form-label"> Your Message:  </label>
+                <label for="LastName" class="col-sm-4 col-form-label"> Your Last Name:  </label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" rows="4" maxlength="50" 
-                    [(ngModel)]="MessageValue"> 
-                    </textarea>
+                  <input type="text" class="form-control" formControlName="LastName" 
+                   placeholder="your last name" required
+                   />
+
+                   <app-control-messages [control]="userForm.controls.LastName"></app-control-messages>
+
                 </div>
             </div>
 
-            <input type = "submit" value = "Submit" class="btn btn-primary contact__button">
+            <div class="form-group row">
+                <label for="Email" class="col-sm-4 col-form-label"> Your email:  </label>
+                <div class="col-sm-8">
+                  <input type="email" email class="form-control" formControlName="Email"
+                  placeholder="your email" required
+                   />
+                   <app-control-messages [control]="userForm.controls.Email"></app-control-messages>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="userMessage" class="col-sm-4 col-form-label"> Your Message:  </label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" rows="4" maxlength="50" 
+                    formControlName="userMessage" > 
+                    </textarea>
+                    <app-control-messages [control]="userForm.controls.userMessage"></app-control-messages>
+
+                </div>
+            </div>
+
+            <button type = "submit" [disabled]="!userForm.valid" class="btn btn-primary contact__button"> Submit </button>
         </form>
 </div>
   

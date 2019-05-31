@@ -19,7 +19,7 @@ export class ProductsTableComponent implements OnInit {
     this.page = 0 ;
   }
 
-  items() {
+  items(){
     const offset =  this.page * this.itemPerPage;
     return this.data.slice(offset, offset + this.itemPerPage);
   }
