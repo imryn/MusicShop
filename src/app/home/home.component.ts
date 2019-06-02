@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CartService} from './../cart.service';
 import {DataService} from './../data-service';
 import { UserService } from '../user.service';
-
-// import {ITEMS} from './../items';
 import {Item} from './../item';
-
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +12,7 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   searchValue: string;
   searchResult: object;
-  // albumsData = ITEMS;
-  albumsData: Observable<Item[]>;
+  albumsData: Item[];
  
 
   constructor(private cartService: CartService, private dataService: DataService, private userService: UserService) {
@@ -26,17 +21,20 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.albumsData = this.userService.getItems();
-    console.log(this.albumsData);
+    this.loadAllItems()
   }
 
-  // onSubmit() {
-  //   if (this.searchValue) {
-  //     this.albumsData = this.dataService.searchByTitle(this.searchValue);
-  //   } else {
-  //     this.albumsData = ITEMS;
-  //   }
-  // }
+  loadAllItems() {
+    this.userService.getItems().subscribe(data => this.albumsData = data);
+  }
+
+  onSubmit() {
+    if (this.searchValue) {
+      this.albumsData = this.dataService.searchByTitle(this.searchValue);
+    } else {
+      this.loadAllItems();
+    }
+  }
 
   onProductAdd(item) {
     this.cartService.onProductAdd(item);

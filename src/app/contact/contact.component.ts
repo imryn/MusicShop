@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { UserService } from '../user.service';
-import { User } from '../user';
+import { Users } from '../user';
 import { ValidationService } from '../validation-service';
 
 
@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit{
 
   dataSaved: boolean;
   userForm: FormGroup;
-  allEmployees: Observable<User[]>;
+  allEmployees: Observable<Users[]>;
   message = null;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService) {
@@ -37,7 +37,7 @@ export class ContactComponent implements OnInit{
     this.createUser(user);
   }
 
-  createUser(user: User) {
+  createUser(user: Users) {
     if (this.userForm !== null) {
       this.userService.createUser(user).subscribe(() => {
           this.dataSaved = true;

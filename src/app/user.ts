@@ -1,4 +1,4 @@
-export class User {
+export interface Users {
     userID: number;
     FirstName: string;
     LastName: string;
