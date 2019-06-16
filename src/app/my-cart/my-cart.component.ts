@@ -11,6 +11,7 @@ import { DataService } from '../data-service';
 export class MyCartComponent {
   cart: Cart;
   items = [];
+  quantity: number;
 
   constructor(private cartService: CartService, private dataService: DataService) {
     this.cart = this.cartService.getCart();
@@ -18,6 +19,17 @@ export class MyCartComponent {
       return this.dataService.findItemByTitle(title);
     });
 
+    this.quantity = this.sumQuantity(this.cart);
+  }
+
+  sumQuantity(cart) {
+    let sum = 0;
+    for (const el in cart ) {
+      if (cart.hasOwnProperty( el )) {
+        sum += parseFloat( cart[el] );
+      }
+    }
+    return sum;
   }
 
 }
