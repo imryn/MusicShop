@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Cart } from './typing';
 import { DataService } from '../data-service';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-my-cart',
@@ -11,25 +12,19 @@ import { DataService } from '../data-service';
 export class MyCartComponent {
   cart: Cart;
   items = [];
-  quantity: number;
+  cost: number[];
+  totalCost: number;
 
   constructor(private cartService: CartService, private dataService: DataService) {
     this.cart = this.cartService.getCart();
     this.items = Object.keys(this.cart).map((title) => {
-      return this.dataService.findItemByTitle(title);
+      const item = this.dataService.findItemByTitle(title);
+      item.totalCost = this.cart[title] * item.cost;
+      return item;
     });
 
-    this.quantity = this.sumQuantity(this.cart);
-  }
+    this.totalCost = cartService.totalCost();
 
-  sumQuantity(cart) {
-    let sum = 0;
-    for (const el in cart ) {
-      if (cart.hasOwnProperty( el )) {
-        sum += parseFloat( cart[el] );
-      }
-    }
-    return sum;
   }
 
 }

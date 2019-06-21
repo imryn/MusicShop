@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import {ITEMS} from './items';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor() {
-
+  constructor(private userService: UserService) {
   }
 
- findItemByTitle(title){
-    for (const item of ITEMS) {
+  findItemByTitle(title) {
+    const items = this.userService.getItems();
+    for (const item of items) {
       if (item.title.includes(title)) {
         return item;
       }
@@ -19,9 +19,10 @@ export class DataService {
   }
 
 
- searchByTitle(searchWord) {
+  searchByTitle(searchWord) {
+    const items = this.userService.getItems();
     const regex = new RegExp(searchWord, 'i');
-    return ITEMS.filter(item => regex.test(item.title));
+    return items.filter(item => regex.test(item.title));
   }
 
 

@@ -17,6 +17,7 @@ import {  UserService } from './user.service';
 
 import {  HttpClientModule, HttpClient} from '@angular/common/http';
 import { ControlMessagesComponent } from './control-messages/control-messages.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ControlMessagesComponent } from './control-messages/control-messages.co
     ProductInfoComponent,
     CartInfoComponent,
     MyCartComponent,
-    ControlMessagesComponent
+    ControlMessagesComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

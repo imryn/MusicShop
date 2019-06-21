@@ -35,12 +35,17 @@ $bp-small: 48em; //762px
     margin: 0;
     display: flex;
 
+    .active {
+        background-color: #16a085;
+    }
+
     &__item {
         position: relative;
         margin: 0;
         flex: 1;
         white-space: nowrap;
         padding: 1rem 4rem;
+
     }
 
     &__item::before {
@@ -84,5 +89,7 @@ $bp-small: 48em; //762px
 .material-icons {
     margin-left: 30%;
     color: #fff;
+    opacity: 1;
+    position: relative;
 }
 

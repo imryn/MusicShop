@@ -6,6 +6,7 @@
         <th> Poster </th>
         <th> Title </th>
         <th> Quantity </th>
+        <th> Cost </th>
       </tr>
     </thead>
     <tbody *ngIf="items">
@@ -19,11 +20,15 @@
         <td class="quantity"> 
           {{cart[item.title]}} 
         </td>
+        <td>
+          {{item.totalCost}}
+        </td>
       </tr>
       <tr>
-        <td> </td>
-        <td> </td>
-        <td> Total: {{quantity}} </td>
+        <td></td>
+        <td></td>
+        <td> Total: {{cartService.totalCalc()}} </td>
+        <td> {{totalCost}} $ </td>
       </tr>
     </tbody>
 </table>

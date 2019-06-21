@@ -1,4 +1,4 @@
-<div class="item_info">
+<div class="item_info" *ngIf="userService.items && userService.items.length">
   <p class="detail"> Cart Info: </p>
     <div class="product">
       <div class="product__item"> item {{totalCalc()}} </div>
